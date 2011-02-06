@@ -1,6 +1,6 @@
 (ns compojure.example.routes
   (:use compojure.core
-        [hiccup core page-helpers])
+        [hiccup core middleware page-helpers])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [compojure.response :as response]))
@@ -19,4 +19,5 @@
   (route/not-found "Page not found"))
 
 (def app
-  (handler/site main-routes))
+  (-> (handler/site main-routes)
+      (wrap-base-url)))
