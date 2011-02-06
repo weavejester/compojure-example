@@ -1,17 +1,10 @@
 (ns compojure.example.routes
   (:use compojure.core
-        [hiccup core middleware page-helpers])
+        compojure.example.views
+        [hiccup.middleware :only (wrap-base-url)])
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [compojure.response :as response]))
-
-(defn index-page []
-  (html5
-    [:head
-      [:title "Hello World"]
-      (include-css "/css/style.css")]
-    [:body
-      [:h1 "Hello World"]]))
 
 (defroutes main-routes
   (GET "/" [] (index-page))
