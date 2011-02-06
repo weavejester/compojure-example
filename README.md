@@ -1,13 +1,18 @@
-# composure-example
+This is an example web application that uses [Ring][1] and
+[Compojure][2]. It demonstrates basic routing and embedded resources.
 
-FIXME: write description
+To play around with this example project, you will first need
+[Leiningen][3] installed.
 
-## Usage
+Download the project dependencies with:
 
-FIXME: write
+    lein deps
 
-## License
+Now you can start a development web server with:
 
-Copyright (C) 2010 FIXME
+    lein ring server
 
-Distributed under the Eclipse Public License, the same as Clojure.
+Or you can compile the project into a war-file ready for deployment to
+a servlet container like [Tomcat][4] or [Jetty][5]:
+
+    lein ring uberwar
