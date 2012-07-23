@@ -1,5 +1,5 @@
 (ns compojure.example.views
-  (:use [hiccup core page-helpers]))
+  (:use [hiccup core page]))
 
 (defn index-page []
   (html5
