@@ -3,3 +3,4 @@ pom.xml
 *.war
 lib
 classes
+target
